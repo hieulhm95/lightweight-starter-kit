@@ -7,7 +7,7 @@ mkdir -p package
 
 # 2. Pack each dependency from the registry (will fail if no registry access)
 npm pack ct-web-gtm --pack-destination ./package
-npm pack clad-ui --pack-destination ./package
+npm pack clad-ui@1.5.2 --pack-destination ./package
 # npm pack @chotot/appwrapper-placeholder@1.2.8 --pack-destination ./package
 # npm pack @chotot/appwrapper-utils@1.2.2 --pack-destination ./package
 # npm pack @chotot/auth@1.1.0 --pack-destination ./package
