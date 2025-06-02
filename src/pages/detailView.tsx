@@ -74,7 +74,7 @@ const DetailView: NextPageWithLayout<Props> = ({ isSSR }: Props) => {
     { data: { job: 'job A' }, html: 'Lao động phổ thông', text: 'Lao động phổ thông' },
     { data: { job: 'job B' }, html: 'Tạp vụ', text: 'Tạp vụ' },
   ]);
-  const onSelect = (v) => {
+  const onSelect = v => {
     const temp = [...valueSearch, v];
     setValueSearch(temp);
   };
@@ -82,8 +82,8 @@ const DetailView: NextPageWithLayout<Props> = ({ isSSR }: Props) => {
   const onClear = () => {
     setValueSearch([]);
   };
-  const onRemoveOption = (deleted) => {
-    const afterDeleteValues = valueSearch.filter((va) => va.data !== deleted.data);
+  const onRemoveOption = deleted => {
+    const afterDeleteValues = valueSearch.filter(va => va.data !== deleted.data);
     setValueSearch(afterDeleteValues);
   };
   const [value, setValue] = useState(0);
@@ -174,7 +174,7 @@ const DetailView: NextPageWithLayout<Props> = ({ isSSR }: Props) => {
           primaryColor="info"
           secondaryBtnLabel="Secondary"
         >
-          Override default closeIcon with <code>&lt;ArrowRight /&gt;</code> icon
+          Override default closeIcon icon
         </Drawer>{' '}
         <Button onClick={() => setOpen(true)}>Open Popup</Button>
         {/* <Popup
@@ -227,7 +227,7 @@ const DetailView: NextPageWithLayout<Props> = ({ isSSR }: Props) => {
 
       <Dropdown
         value={valueDropdown}
-        onChange={(e) => setValueDropdown(e.target.value)}
+        onChange={e => setValueDropdown(e.target.value)}
         label="Chọn tỉnh thành"
         options={[
           { value: 'hcm', label: 'Tp Hồ Chí Minh' },
@@ -244,7 +244,7 @@ const DetailView: NextPageWithLayout<Props> = ({ isSSR }: Props) => {
       <CurrencyInput
         allowNegativeValue
         value={value}
-        onChange={(e) => setValue(parseInt(e.target.value, 10))}
+        onChange={e => setValue(parseInt(e.target.value, 10))}
         label="Amount (VND)"
       />
 
@@ -252,7 +252,7 @@ const DetailView: NextPageWithLayout<Props> = ({ isSSR }: Props) => {
         <CurrencyInput
           allowNegativeValue
           value={value}
-          onChange={(e) => setValue(parseInt(e.target.value, 10))}
+          onChange={e => setValue(parseInt(e.target.value, 10))}
           label="Amount"
         />
         <Dropdown
@@ -263,7 +263,7 @@ const DetailView: NextPageWithLayout<Props> = ({ isSSR }: Props) => {
             { value: 'year', label: 'per year' },
             { value: 'month', label: 'per month' },
           ]}
-          onChange={(e) => setTerm(e.target.value)}
+          onChange={e => setTerm(e.target.value)}
         />
         <Button color="positive" size="large">
           <PaymentInfo />
@@ -274,7 +274,7 @@ const DetailView: NextPageWithLayout<Props> = ({ isSSR }: Props) => {
         id="with-helptext"
         label="TextArea label"
         value={value}
-        onChange={(e) => setValue(parseInt(e.target.value, 10))}
+        onChange={e => setValue(parseInt(e.target.value, 10))}
         helptext="Help text"
       />
 
